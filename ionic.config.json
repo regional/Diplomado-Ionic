@@ -1,0 +1,7 @@
+{
+  "name": "Diplomado Ionic Junior",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
