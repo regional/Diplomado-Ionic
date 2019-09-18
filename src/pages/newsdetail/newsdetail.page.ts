@@ -7,7 +7,7 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 @Component({
   selector: 'app-newsdetail',
   templateUrl: './newsdetail.page.html',
-  styleUrls: ['./newsdetail.page.scss'],
+ 
 })
 export class NewsdetailPage {
   newsData: any;
