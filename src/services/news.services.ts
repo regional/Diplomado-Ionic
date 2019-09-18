@@ -2,8 +2,13 @@ import { Injectable } from "@angular/core";
 import { AngularFireDatabase } from "@angular/fire/database";
 import * as CryptoJS from 'crypto-js';
 import * as moment from 'moment';
+
+
 @Injectable()
 export class NewsServices {
+    public baseUrl: any = 'https://newsapi.org/v2/';
+    public country: any = 'country=ve';
+    public apiKey: any = '&apiKey=6454b9231b244faebc76bb683293d279';
     StorageData: string = 'sn-user';
     RememberMeData: string = 'sn-rememberme';
     key: string = '5114fhskdj6516fhkdfvnc5498xnvxkjcvk645jsdhfksjd';
@@ -12,6 +17,7 @@ export class NewsServices {
         var url = 'news/' + news.id;
         this.AFDB.database.ref(url).set(news);
     }
+    
     public getAllNews() {
         return this.AFDB.list("news");
     }
@@ -138,6 +144,16 @@ export class NewsServices {
         }
         return moment(date).fromNow();
     }
+
+    getNews() {
+        const url = this.baseUrl + 'top-headlines?' + this.country + this.apiKey;
+        return this.AFDB.database.ref(url);
+      }
+    
+      getNewbyCategory(category) {
+        const url = this.baseUrl + 'top-headlines?' + this.country + '&category=' + category + this.apiKey;
+        return this.AFDB.database.ref(url);
+      }
 
     public objectToArray(object){
         if(typeof object === 'object'){

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Detalle de Noticias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img [src]="image" alt="">
+  <h1>{{headLine}}</h1>
+  <p>{{description}}</p>
+</ion-content>
+
+
+<ion-row no-padding>
+  <ion-col text-left>
+    <ion-button fill="clear" size="small" color="secondary" (click)="addToFav(meal)">
+      <ion-icon name="star" slot="start"></ion-icon>
+      Favorito
+    </ion-button>
+  </ion-col>
+ 
+  <ion-col text-right>
+    <ion-button fill="clear" size="small" color="secondary" (click)="order(meal)">
+      <ion-icon name="share-alt" slot="start"></ion-icon>
+      Like y Mensaje
+    </ion-button>
+  </ion-col>

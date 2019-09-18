@@ -7,6 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { UsersPage } from '../pages/users/users';
 import { GalleriesPage } from '../pages/galleries/galleries';
+import { NewsdetailPage } from '../pages/newsdetail/newsdetail.page';
 import { PostsPage } from '../pages/posts/posts';
 import { NewsServices } from '../services/news.services';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
@@ -42,7 +43,7 @@ export class MyApp {
     this.pages = [
       { title: 'Inicio', icon: 'home', component: HomePage, auth:'none' },
       { title: 'Galerias', icon: 'images', component: GalleriesPage, auth:'none' },
-      { title: 'Feed', icon: 'home', component: HomePage, auth:'none' },
+      { title: 'Feed', icon: 'paper', component: NewsdetailPage, auth:'none' },
       { title: 'Posts', icon: 'paper', component: PostsPage, auth:'admin' },
       { title: 'Usuario', icon: 'people', component: UsersPage, auth:'admin' }
     ];
